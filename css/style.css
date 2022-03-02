@@ -14,9 +14,9 @@
 
 .attribution { 
     font-size: 11px; 
-    text-align: right; 
-    grid-row-start: 4;
-    grid-column-start: 3;
+    text-align: left; 
+    align-self:flex-end;
+    background-color: var(--slightWhite1);
 }
     
 .attribution a {
@@ -26,19 +26,21 @@
 
 .body,html {
     background-color: var(--main-color);
-    height: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
     
 }
 
-.grid-container{
+/*.grid-container{
     display: grid;
     grid-template-columns: 25% auto 25%;
     grid-template-rows: 25% auto 25%;
-}
+}*/
 
-main {   
-    height: 70%;
-  }
+
 
 h1 {
     
@@ -96,7 +98,27 @@ img {
     display: inline-block;
     vertical-align: top;
     background-color: var(--detail-color);
-    width: 100%;
+    width: 70%;
     border-radius: 0 5px 5px 0;
     background-color: var(--third-color);
+}
+
+
+@media only screen and (max-width: 375px) {
+    section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    transform: scale(0.9,0.7);
+}
+
+img {
+    width: 100%;    
+    border-radius: 5px 5px 0 0; 
+}
+
+.infoGraph {
+    flex-direction: column;
+    align-items: center;
+}
 }
